@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Unfollowers for {{ username }}</h1>
+        {% if unfollowers %}
+            <ul>
+                {% for unfollower in unfollowers %}
+                    <li>
+                        <a href="https://github.com/{{ unfollower.login }}" target="_blank">
+                            <img src="{{ unfollower.avatar_url }}" alt="{{ unfollower.login }}" width="50" height="50">
+                            {{ unfollower.login }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No unfollowers found for {{ username }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

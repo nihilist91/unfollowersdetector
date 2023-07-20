@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Unfollowers Detector</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter GitHub username" required>
+            <button type="submit">Detect</button>
+        </form>
+    </div>
+</body>
+</html>
