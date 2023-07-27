@@ -30,6 +30,6 @@ jobs:
         run: docker tag ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s) ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:latest
       
       - name: Push the Docker image
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s)
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:latest
           
   
