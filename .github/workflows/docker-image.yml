@@ -15,7 +15,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v4
       with:
-        images: ghcr.io/${{ github.repository }}:latest
+        images: ghcr.io/mohammedhank91/publish-packages/${{ github.repository }}:latest
     - name: Login to GHCR
       uses: docker/login-action@v2
       with:
