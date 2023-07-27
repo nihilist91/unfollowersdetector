@@ -35,4 +35,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/mohammedhank91/unfollowersdetector/publish-packages/test:latest
+          tags: ghcr.io/mohammedhank91/publish-packages/unfollowersdetector:latest
+          
