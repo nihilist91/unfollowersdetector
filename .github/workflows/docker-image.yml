@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
   
   build_and_push:
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
   
     steps:
       - name: Checkout
