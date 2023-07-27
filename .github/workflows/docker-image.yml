@@ -1,4 +1,4 @@
-name: ci
+name: Build image docker For UnfoloowersDetector
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 jobs:
   login:
     runs-on: ubuntu-latest
+  
     steps:
       -
         name: Login to Docker Hub
@@ -14,10 +15,19 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+  
+  build_and_push:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+  
       - name: Build the Docker image
-        run: docker build . --file Dockerfile
+        run: docker build . --file Dockerfile --tag unfollowersdetector:$(date +%s) ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s) 
       
       
       - name: Push the Docker image
-        run: docker tag unfollowersdetector:$(date +%s) ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s) && docker push ${{ secrets.DOCKERHUB_TOKEN }}/unfollowersdetector:$(date +%s)
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s)
+          
+  
