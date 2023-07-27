@@ -8,12 +8,12 @@ on:
 
 jobs:
 
-  build:
+  build_push:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v1
         # Login to DockerHub Registry
     - name: Login to DockerHub Registry
       run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
@@ -24,3 +24,4 @@ jobs:
       
     - name: Push the Docker image
       run: docker tag unfollowersdetector:$(date +%s) ${{ secrets.DOCKERHUB_USERNAME }}/unfollowersdetector:$(date +%s)
+     
