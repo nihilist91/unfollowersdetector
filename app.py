@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 import requests
 import requests_cache
-app = Flask(__name__)
+
+app = Flask(__name__,template_folder='templates')
 
 
 # Enable requests caching with a time-based expiration of 60 seconds
