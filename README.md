@@ -25,7 +25,7 @@ This web application uses the GitHub API to fetch a user's followers and the acc
 
 1. Clone the repository:
 
-```git clone https://github.com/your_username/UnfollowersDetector.git```
+```git clone https://github.com/mohammedhank91/unfollowersdetector.git```
 
 ```cd UnfollowersDetector```
 
