@@ -1,5 +1,5 @@
 # Use the official Python image as the base image
-FROM python:3.8-slim
+FROM python:3.9-slim-buster
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -13,7 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy your Flask application code into the container
 COPY . .
 
-EXPOSE 5000
-
-# Command to run your Flask application when the container starts
-CMD ["python", "main.py"]
+# Run the Flask app when the container starts
+CMD flask run -h 0.0.0.0 -p 5000
